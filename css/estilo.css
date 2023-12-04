@@ -1,0 +1,32 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h3 {
+    color: #A93146;
+    text-align: center;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #252525;
+    text-decoration: none;
+    border: 1px solid #A93146;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #A93146;
+    color: #fff;
+}
