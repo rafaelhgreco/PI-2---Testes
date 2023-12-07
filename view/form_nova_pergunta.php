@@ -4,11 +4,18 @@ session_start();
 
 if (isset($_SESSION['nome_adm_logado'])) {
     $nome_adm = $_SESSION['nome_adm_logado'];
-    $id_adm = $_SESSION['adm_id_logado'];
-    $adm_email = $_SESSION['adm_email'];
 } else {
-  
+    header('Location: ../login.html');
+    exit();
     echo "Sessão não iniciada.";
+}
+
+if (isset($_GET['logout'])) {
+   
+    session_destroy();
+
+    header("Location: ../index.php");
+    exit();
 }
 
 require_once '../class/pergunta.php';
@@ -35,37 +42,39 @@ $lista_adm = $nome_admin->admin_listar();
     <header>
         <nav class="navbar navbar-expand-lg fixed-top" >
             <img class="logo" src="../img/FATEC.svg" >
-            <div class="container ">
+            <div class="collapse navbar-collapse  " id="navbarNav">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse  " id="navbarNav">
-                <ul class="navbar-nav">
-                      <li class="nav-item mx-3 ">
+            <br><br>
+            <h2 class="nav-link text-light text-dark">Painel Administrativo</h2> 
 
-                          <h2 class="nav-link text-light text-dark">Painel Administrativo</h2>
+        <ul class="navbar-nav">
 
-                      </li>
-                      <li class="nav-item mx-3" >
-                          <a class="nav-link text-dark" href="listar_pergunta_sugerida.php" >Perguntas sugeridas</a>
-                      </li>
-                      <li class="nav-item mx-3">
-                          <a class="nav-link text-dark" href="form_nova_pergunta.php" >Publicar pergunta</a>
-                      </li>
-                      <li class="nav-item mx-3">
-                          <a class="nav-link text-dark" href="listar_pergunta_publicada.php" >Perguntas publicadas</a>
-                      </li>
-                      <li class="nav-item mx-3">
-                          <a class="nav-link text-dark" href="listar_pergunta_anulada.php" >Perguntas anuladas</a>
-                      </li class="nav-item mx-3">
-                          <a class="nav-link text-dark" href="config_conta.php" >Configurações de conta</a>
-                      </li>
-                      <li class="nav-item mx-3">
-                          <a class="nav-link text-dark" href="../index.php" > ⬅ Voltar </a>
-                      </li>
-                  </ul>
-              </div>
+        <li class="nav-item mx-3" >
+            <a class="nav-link text-dark" href="listar_pergunta_sugerida.php">Perguntas sugeridas</a>
+        </li>
+        
+        <li class="nav-item mx-3">
+            <a class="nav-link text-dark" href="form_nova_pergunta.php">Publicar pergunta</a>
+        </li>
+
+        <li class="nav-item mx-3">
+            <a class="nav-link text-dark" href="listar_pergunta_publicada.php">Perguntas publicadas</a>
+        </li>
+
+        <li class="nav-item mx-3">
+            <a class="nav-link text-dark" href="listar_pergunta_anulada.php">Perguntas anuladas</a>
+        </li>   
+
+        </li class="nav-item mx-3">
+            <a class="nav-link text-dark" href="listar_adm.php">Informaçoes de administradores</a>
+        </li>
+
+        <li class="nav-item mx-3">
+            <a class="nav-link text-dark" href="?logout=true"> Logout</a>
+        </li>
+       
+    </ul>
+    </div>
             </div>
         </nav>
 

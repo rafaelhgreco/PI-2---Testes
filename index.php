@@ -9,11 +9,11 @@
     if(!empty($_GET['search']))
     {
         $data = $_GET['search'];
-        $sql = "SELECT * FROM tb_perguntas WHERE (id_pergunta LIKE '%$data%'  or pergunta LIKE '%$data%' or resposta LIKE '%$data%') and status_pergunta = 'RES' ORDER BY id_pergunta DESC";
+        $sql = "SELECT * FROM tb_perguntas WHERE (id_pergunta LIKE '%$data%'  or pergunta LIKE '%$data%' or resposta LIKE '%$data%') and status_pergunta = 'RES' ORDER BY id_pergunta";
     }
     else
     {
-        $sql ="SELECT * FROM tb_perguntas WHERE status_pergunta = 'RES' ORDER BY pergunta DESC ";
+        $sql ="SELECT * FROM tb_perguntas WHERE status_pergunta = 'RES' ORDER BY id_pergunta";
     }
     $result = $conexao->query($sql);
 
@@ -67,6 +67,7 @@
             </div>
         </nav>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     </header>
 
     <main>
@@ -101,7 +102,7 @@
           </div>
           <br><br>
           <div class="box-search" style="display:flex; padding:5px;"> 
-                <input type="search" class="form-control w=25" id="pesquisar" placeholder="Pesquisar....">
+                <input type="search" class="form-control w=25" id="pesquisar" placeholder="Pesquisar...." onkeydown="handleKeyPress(event)">
                 <button class="btn" onclick="searchData()" style="margin-left:5px;"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -110,28 +111,23 @@
 
             </div>
            <br><br> 
-           <div class="accordion-item">
-                <?php
-                    while ($user_data = $result->fetch(PDO::FETCH_ASSOC)):
-                 ?>
-                
-                <h2  class="accordion-header" style="color:white;background-color:#3F3F3F; border-radius:1px;padding:20px; box-shadow:1px 1px 1px #252525;" id="heading<?php echo $user_data['id_pergunta']; ?>">
-                    
-                    <button id="perguntas<?php echo $user_data['id_pergunta']; ?>" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $user_data['id_pergunta']; ?>" aria-expanded="true" aria-controls="collapse<?php echo $user_data['id_pergunta']; ?>">
-                        <label><?php echo $user_data['pergunta']; ?></label>
-                        
-                    </button>
-                    
-                </h2>
-              
-                <div style="color:#252525; background-color:#f1f1f1; border-radius:11px;padding:20px; box-shadow:1px 1px 1px #252525;" id="collapse<?php echo $user_data['id_pergunta']; ?>" class="accordion-collapse collapse show" aria-labelledby="heading<?php echo $user_data['id_pergunta']; ?>" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        
-                        <label><?php echo $user_data['resposta']; ?></label>
-                    </div>
-                </div>
-            <?php endwhile; ?>
+
+
+           <div class="accordion" id="faqAccordion">
+    <?php while ($user_data = $result->fetch(PDO::FETCH_ASSOC)): ?>
+        <div class="accordion-header" style="color: white; background-color: #3F3F3F; border-radius: 1px; padding: 20px; box-shadow: 1px 1px 1px #252525;">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $user_data['id_pergunta']; ?>" aria-expanded="true" aria-controls="collapse<?php echo $user_data['id_pergunta']; ?>">
+                <h5><?php echo $user_data['pergunta']; ?></h5>
+            </button>
         </div>
+        <div id="collapse<?php echo $user_data['id_pergunta']; ?>" class="accordion-collapse collapse show" aria-labelledby="heading<?php echo $user_data['id_pergunta']; ?>" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                <p><?php echo $user_data['resposta']; ?></p>
+            </div>
+        </div>
+    <?php endwhile; ?>
+</div>
+
 
         <br><br><br><br>
        
