@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Enviar Pergunta</title>
 </head>
@@ -22,14 +23,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item mx-3">
-                            <h2 class="navbar-brand" style="font-size: 20px;margin-right: 125px;">Central de Ajuda</h2>
+                        <li class="nav-item mx-auto">
+                            <h2 class="navbar-brand text-dark text-center" style="font-size: 20px;">Central de Ajuda</h2>
                         </li>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link text-black" href="index.php"> Pagina Inicial </a>
-                              
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link btn" href="index.php" style="font-size: 17px;">Página inicial</a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
@@ -47,17 +46,14 @@
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome" required>
                 </div>
-    
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-    
                 <div class="mb-3">
                     <label for="pergunta" class="form-label">Pergunta</label>
                     <textarea class="form-control" id="pergunta" name="pergunta" rows="4" required></textarea>
                 </div>
-    
                 <div class="mb-3">
                     <label class="form-label">Situação</label>
                     <div>
@@ -74,16 +70,14 @@
                             <label class="form-check-label" for="situacao_visitante">Visitante</label>
                         </div>
                     </div>
-                </div>
-                
-                </div>
                 <br>
+            <div class="button-container">
                 <button type="submit" class="btn btn-primary">Enviar</button>
                 <button type="reset" class="btn btn-secondary">Limpar</button>
-                <br><br><br>
+            </div>
+            </div><br><br><br>
             </form>
         </div>
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     </main>
 </body>

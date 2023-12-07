@@ -50,7 +50,7 @@ class pergunta{
 
 
         include "../conexao.php";
-        $conexao->exec($sql);
+        $conexao-> exec($sql);
     }
     
 
@@ -80,7 +80,7 @@ class pergunta{
 
         )";
         include "../conexao.php";
-        $conexao->exec($sql);
+        $conexao-> exec($sql);
     }
 
 

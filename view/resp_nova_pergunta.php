@@ -4,7 +4,6 @@ session_start();
 if (isset($_SESSION['nome_adm_logado'])) {
     $nome_adm = $_SESSION['nome_adm_logado'];
     $adm_id = $_SESSION['adm_id_logado'];
-    
 } else {
     header('Location: ../login.html');
     exit();
@@ -85,7 +84,7 @@ $nova_pergunta = new pergunta($id_pergunta);
                             <a class="nav-link text-dark" href="listar_pergunta_anulada.php">Perguntas anuladas</a>
                         </li>   
 
-                        </li class="nav-item mx-3">
+                        <li class="nav-item mx-3">
                             <a class="nav-link text-dark" href="listar_adm.php">Informaçoes de administradores</a>
                         </li>
 
@@ -101,7 +100,6 @@ $nova_pergunta = new pergunta($id_pergunta);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <br><br><br>
     <?php echo "<p>Seja bem vindo: $nome_adm</p>" ?>
-    
     <main>
         
         <div class="container mt-4">

@@ -67,7 +67,7 @@ $lista_adm = $nome_admin->admin_listar();
             <a class="nav-link text-dark" href="listar_pergunta_anulada.php">Perguntas anuladas</a>
         </li>   
 
-        </li class="nav-item mx-3">
+        <li class="nav-item mx-3">
             <a class="nav-link text-dark" href="listar_adm.php">Informaçoes de administradores</a>
         </li>
 
@@ -77,7 +77,6 @@ $lista_adm = $nome_admin->admin_listar();
        
     </ul>
     </div>
-            </div>
         </nav>
 
     </header>
@@ -85,7 +84,6 @@ $lista_adm = $nome_admin->admin_listar();
     <br><br><br>
 
     <?php echo "<p>Seja bem vindo: $nome_adm</p>" ?>
-    
     
     <main>
 

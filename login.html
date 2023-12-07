@@ -27,10 +27,8 @@
                             <h2 class="navbar-brand text-dark" style="font-size: 20px;margin-right: 125px;">Central de Ajuda</h2>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-dark" href="index.php"> Pagina Inicial </a>
-                              
+                            <a class="nav-link btn btn-pagina-inicial" href="index.php" style="font-size: 17px;">Página inicial</a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
@@ -39,23 +37,18 @@
     </header>
     <main>
         <br><br><br><br><br><br><br>
-        <h4 style="text-align: center;font-family: Comic Sans, cursive;font-weight: semi-bold;">Área administrativa</h4>
-        <br>
-        <div  id="formlogin" class="container" >
+        <div id="formlogin" class="container" style="height: auto; overflow-x: auto;border: solid 0.5px #AAAAAA; border-radius: 10px;box-shadow:2px 1px 1.5px #E5E5E5; ">
+            <h4 style="text-align: center;font-family: Comic Sans, cursive;font-weight: semi-bold;">Área administrativa</h4>
             <br>
-            
             <form action="user/usuario-login.php" method="POST" style="color:#f5f5f5">
                 <div class="mb-3">
                     <label for="nome" class="form-label mb-3 text-dark">Usuário</label>
                     <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite seu usuario..."><br><br>
                 </div>
-    
                 <div class="mb-3">
                     <label for="password" class="form-label text-dark">Senha</label>
                     <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha..."><br><br>
                 </div>
-    
-               
                 <br>
                 <button type="submit" class="btn btn-primary">Login</button>
                 <br><br><br>

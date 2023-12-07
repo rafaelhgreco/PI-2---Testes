@@ -1,11 +1,14 @@
 body {
-  background-color: #F9F9F9;
-  font-family: 'Poppins', sans-serif;
+  background-color: #FFFFFF;
+  color: #A93146;
+  font-family: 'Roboto', sans-serif;
 }
 
+
 header {
-  background-color: #F3F3F3;
-  box-shadow: 2px 1px 1.5px #FF9393;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 0px 1.5px #FF9393;
+  padding: 10px 20px;
 }
 
 .navbar-brand {
@@ -14,7 +17,23 @@ header {
 }
 
 .navbar-nav {
-  margin-left: auto;
+  font-size: 16px;
+}
+
+.nav-link {
+  color: #A93146 !important;
+}
+
+.nav-link.btn {
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 1px #E5E5E5;
+  color: #A93146 !important;
+}
+
+.nav-link.btn:hover {
+  background-color: #A93146;
+  color: #FFFFFF !important;
 }
 
 .nav-item {
@@ -22,11 +41,13 @@ header {
 }
 
 #botaoadm {
-  border-radius: 10px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 1px #E5E5E5;
 }
 
 #admarea {
-  color: #252525;
+  color: #A93146;
 }
 
 .btn {
@@ -108,10 +129,11 @@ header {
 
 footer {
   margin-top: 25vh;
-  background-color: #f3f3f3;
-  box-shadow: 10px 1px 3px black;
-  color: #252525;
+  background-color: #FFFFFF;
+  box-shadow: 5px 1px 3px #ddd;
+  color: #A93146;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
 }
+

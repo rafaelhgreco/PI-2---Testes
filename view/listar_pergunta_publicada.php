@@ -104,7 +104,7 @@ $result = $conexao->query($sql);
                             <a class="nav-link text-dark" href="listar_pergunta_anulada.php">Perguntas anuladas</a>
                         </li>   
 
-                        </li class="nav-item mx-3">
+                        <li class="nav-item mx-3">
                             <a class="nav-link text-dark" href="listar_adm.php">Informaçoes de administradores</a>
                         </li>
 

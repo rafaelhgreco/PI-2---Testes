@@ -1,15 +1,27 @@
 #formpergunta {
-    border: 1px ridge #E5E5E5;
-    box-shadow: 0.5px 2px 2px #E5E5E5;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 0px 1.5px #FF9393;
     border-radius: 10px;
-    
+
 }
 #formlogin {
     border: 1px ridge #E5E5E5;
     box-shadow: 0.5px 2px 2px #E5E5E5;
     border-radius: 10px;
     width: 500px;
-    
+
+}
+
+.nav-link.btn {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 1px #E5E5E5;
+    color: #A93146 !important;
+}
+
+.nav-link.btn:hover {
+    background-color: #A93146;
+    color: #FFFFFF !important;
 }
 
 h1{
@@ -19,8 +31,12 @@ h1{
 }
 button{
     
-    width: 175px;
+    width: 100px;
 }
 .container {
+    text-align: center;
+}
+
+.button-container {
     text-align: center;
 }
