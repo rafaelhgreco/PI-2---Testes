@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Copiar Texto</h2>
+
+    <div class="container">
+        <textarea id="texto1" readonly>Joao Pereira</textarea>
+        <button onclick="copiarTexto('texto1')">Copiar Texto 1</button>
+
+        <textarea id="texto2" readonly>joaopereira@hotmail.com</textarea>
+        <button onclick="copiarTexto('texto2')">Copiar Texto 2</button>
+
+        <textarea id="texto3" readonly>Como posso concorrer a uma vaga na Fatec?</textarea>
+        <button onclick="copiarTexto('texto3')">Copiar Texto 3</button>
+
+        <textarea id="texto4" readonly>O ingresso nas Fatecs se dá por meio de processo seletivo semestral denominado Vestibular. Para cursar o Ensino Superior Tecnológico oferecido pelas Fatecs o interessado deverá ter concluído o Ensino Médio.</textarea>
+        <button onclick="copiarTexto('texto4')">Copiar Texto 4</button>
+
+        <textarea id="texto5" readonly>Quais são os pré-requisitos para ingressar no curso de Desenvolvimento de Software Multiplataforma (DSM) na Fatec?</textarea>
+        <button onclick="copiarTexto('texto5')">Copiar Texto 5</button>
+
+        <textarea id="texto6" readonly>Para ingressar no curso de Desenvolvimento de Software Multiplataforma (DSM) na Fatec, é necessário ter concluído o ensino médio. Além disso, a seleção dos candidatos é realizada por meio de um vestibular, conforme as diretrizes estabelecidas pela instituição. Recomenda-se verificar o edital do processo seletivo para obter informações específicas sobre as datas, documentos necessários e demais detalhes do processo de ingresso.</textarea>
+        <button onclick="copiarTexto('texto6')">Copiar Texto 6</button>
+    </div>
+
+    <script>
+        function copiarTexto(idCampo) {
+            /* Obtém o elemento de texto */
+            var texto = document.getElementById(idCampo);
+
+            /* Seleciona o texto no campo de texto */
+            texto.select();
+            texto.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+
+            /* Copia o texto para a área de transferência */
+            document.execCommand("copy");
+
+            
+        }
+    </script>
+
+</body>
+</html>

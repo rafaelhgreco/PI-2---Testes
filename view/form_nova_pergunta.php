@@ -5,6 +5,7 @@ session_start();
 if (isset($_SESSION['nome_adm_logado'])) {
     $nome_adm = $_SESSION['nome_adm_logado'];
     $adm_id = $_SESSION['adm_id_logado'];
+    $adm_email = $_SESSION['adm_email'];
 } else {
     header('Location: ../login.html');
     exit();
@@ -84,7 +85,7 @@ $lista_adm = $nome_admin->admin_listar();
     <br><br><br>
 
     <?php echo "<p>Seja bem vindo: $nome_adm</p>" ?>
-    <?php echo "<p>Seja bem vindo: $adm_id</p>" ?>
+    
     
     <main>
 

@@ -129,6 +129,7 @@ if (isset($_GET['logout'])) {
                                 <th>Nome</th>
                                 <th>E-mail</th>
                                 <th>Status</th>
+                                <th>Situacao</th>
                                 <th>Data Recebimento</th>
                                 <th>Ações</th>
                             </tr>
@@ -143,6 +144,7 @@ if (isset($_GET['logout'])) {
                                 echo"<td>".$user_data['nome_solicitante']."</td>";
                                 echo"<td>".$user_data['email_solicitante']."</td>";
                                 echo"<td>".$user_data['status_pergunta']."</td>";
+                                echo"<td>".$user_data['situacao']."</td>";
                                 echo "<td>".date('d/m/Y H:i:s', strtotime($user_data['data_pergunta']))."</td>";
 
                                 echo "<td>

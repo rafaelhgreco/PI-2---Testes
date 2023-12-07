@@ -24,17 +24,9 @@ CREATE TABLE tb_perguntas (
     view INT DEFAULT 0
 );
 
-DELIMITER //
-CREATE TRIGGER before_update_tb_perguntas
-BEFORE UPDATE ON tb_perguntas
-FOR EACH ROW
-BEGIN
-    IF NEW.resposta <> OLD.resposta THEN
-        SET NEW.data_resposta = CURRENT_TIMESTAMP();
-    END IF;
-END;
-//
-DELIMITER ;
+CREATE TRIGGER update_resposta_tb_perguntas
+BEFORE UPDATE ON tb_perguntas FOR EACH ROW
+SET NEW.data_resposta = CURRENT_TIMESTAMP();
 
 
 
