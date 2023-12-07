@@ -4,6 +4,7 @@ session_start();
 
 if (isset($_SESSION['nome_adm_logado'])) {
     $nome_adm = $_SESSION['nome_adm_logado'];
+    $adm_id = $_SESSION['adm_id_logado'];
 } else {
     header('Location: ../login.html');
     exit();
@@ -83,6 +84,7 @@ $lista_adm = $nome_admin->admin_listar();
     <br><br><br>
 
     <?php echo "<p>Seja bem vindo: $nome_adm</p>" ?>
+    <?php echo "<p>Seja bem vindo: $adm_id</p>" ?>
     
     <main>
 
@@ -109,7 +111,7 @@ $lista_adm = $nome_admin->admin_listar();
                 <div class="mb-3">
                 <span>Administrador:</span>
                 <input type="text" class="form-control" name="nomeadm" value="<?= $nome_adm?>" readonly>
-                <input type="hidden" name="seladm" value="<?= $id_adm?>">
+                <input type="hidden" name="seladm" value="<?= $adm_id?>">
                 <input type="hidden" name="adm_email" value="<?= $adm_email?>">
                 </div>
 

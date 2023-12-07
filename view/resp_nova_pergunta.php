@@ -3,6 +3,8 @@ session_start();
 
 if (isset($_SESSION['nome_adm_logado'])) {
     $nome_adm = $_SESSION['nome_adm_logado'];
+    $adm_id = $_SESSION['adm_id_logado'];
+    
 } else {
     header('Location: ../login.html');
     exit();
@@ -99,6 +101,7 @@ $nova_pergunta = new pergunta($id_pergunta);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <br><br><br>
     <?php echo "<p>Seja bem vindo: $nome_adm</p>" ?>
+    
     <main>
         
         <div class="container mt-4">
@@ -117,7 +120,7 @@ $nova_pergunta = new pergunta($id_pergunta);
 
                 <span>Administrador:</span>
                 <input type="text" class="form-control" name="nomeadm" value="<?= $nome_adm?>" readonly>
-                <input type="hidden" name="seladm" value="<?= $id_adm?>">
+                <input type="hidden" name="seladm" value="<?= $adm_id?>">
                 <br><br>
 
                 <div class="mb-3">

@@ -142,7 +142,7 @@ $result = $conexao->query($sql);
                             echo"<td>".$user_data['resposta']."</td>";
                             echo"<td>".$user_data['nome_solicitante']."</td>";
                             echo"<td>".$user_data['email_solicitante']."</td>";
-                            echo"<td>".$user_data['data_pergunta']."</td>";
+                            echo "<td>".date('d/m/Y H:i:s', strtotime($user_data['data_pergunta']))."</td>";
                             echo"<td>".$user_data['status_pergunta']."</td>";
                         }
                        

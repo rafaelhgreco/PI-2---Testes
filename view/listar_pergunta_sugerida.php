@@ -143,7 +143,8 @@ if (isset($_GET['logout'])) {
                                 echo"<td>".$user_data['nome_solicitante']."</td>";
                                 echo"<td>".$user_data['email_solicitante']."</td>";
                                 echo"<td>".$user_data['status_pergunta']."</td>";
-                                echo"<td>".$user_data['data_pergunta']."</td>";
+                                echo "<td>".date('d/m/Y H:i:s', strtotime($user_data['data_pergunta']))."</td>";
+
                                 echo "<td>
                                             <a class='btn btn-lg btn-primary' href='../view/resp_nova_pergunta.php?id_pergunta=$user_data[id_pergunta]'><img class='botao' src='../img/send.svg'></a></button>
                                             <a class='btn btn-lg btn-danger' href='../controller/anular-pergunta-sugerida.php?id_pergunta=$user_data[id_pergunta]'><img class='botao' src='../img/x-square.svg'></a>
