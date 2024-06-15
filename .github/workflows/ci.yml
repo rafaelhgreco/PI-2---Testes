@@ -38,15 +38,6 @@ jobs:
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests/PerguntaTest.php
 
-    - name: Commit updated composer.lock
-      if: success() && github.ref == 'refs/heads/main'
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add composer.lock
-        git commit -m "Update composer.lock"
-        git push origin main
-
 
 
 
