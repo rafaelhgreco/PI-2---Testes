@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'seu-usuario/seu-projeto',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '38a9d827abd4f6846ba7528787f3fd8f592c4b2e',
-        'type' => 'library',
+        'reference' => 'edb78de5d5e8c0178c563900652f70e25ade25ac',
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '38a9d827abd4f6846ba7528787f3fd8f592c4b2e',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.12.0',
             'version' => '1.12.0.0',
@@ -101,9 +92,9 @@
             'dev_requirement' => true,
         ),
         'phpunit/phpunit' => array(
-            'pretty_version' => '11.0.0',
-            'version' => '11.0.0.0',
-            'reference' => 'ece3536c22fc5113906a42e7e82de00baaef36d0',
+            'pretty_version' => '11.2.1',
+            'version' => '11.2.1.0',
+            'reference' => '1b8775732e9c401bda32df3ffbdf90dec7533ceb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
@@ -243,6 +234,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'seu-usuario/seu-projeto' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'edb78de5d5e8c0178c563900652f70e25ade25ac',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.3',

@@ -588,17 +588,17 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.0.0",
-            "version_normalized": "11.0.0.0",
+            "version": "11.2.1",
+            "version_normalized": "11.2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ece3536c22fc5113906a42e7e82de00baaef36d0"
+                "reference": "1b8775732e9c401bda32df3ffbdf90dec7533ceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ece3536c22fc5113906a42e7e82de00baaef36d0",
-                "reference": "ece3536c22fc5113906a42e7e82de00baaef36d0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1b8775732e9c401bda32df3ffbdf90dec7533ceb",
+                "reference": "1b8775732e9c401bda32df3ffbdf90dec7533ceb",
                 "shasum": ""
             },
             "require": {
@@ -631,14 +631,14 @@
             "suggest": {
                 "ext-soap": "To be able to generate mocks based on WSDL files"
             },
-            "time": "2024-02-02T06:12:57+00:00",
+            "time": "2024-06-11T07:30:35+00:00",
             "bin": [
                 "phpunit"
             ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "11.0-dev"
+                    "dev-main": "11.2-dev"
                 }
             },
             "installation-source": "source",
@@ -671,7 +671,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.0.0"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.2.1"
             },
             "funding": [
                 {
