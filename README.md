@@ -14,7 +14,10 @@ A Entrega Contínua é uma extensão da Integração Contínua, garantindo que a
 - [PHPUnit]
 
 ## Como Executar
-Para executar os testes:
+Necessário a instalação do composer.
+
+Para executar no terminal:
+
 ./vendor/bin/phpunit tests/PerguntaTest.php
 
 ## Contribuições
