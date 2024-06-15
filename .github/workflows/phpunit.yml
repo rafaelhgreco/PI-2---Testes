@@ -24,7 +24,7 @@ jobs:
         tools: composer
 
     - name: Validate PHP syntax
-      run: php -l src/
+      run: php -l class/
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
