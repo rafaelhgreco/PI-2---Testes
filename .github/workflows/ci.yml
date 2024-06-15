@@ -17,28 +17,17 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2'  # Use a versão 8.0
+        php-version: '8.2'  # Atualize para a versão 8.2
         extensions: mbstring, xml, pdo_mysql
         ini-values: post_max_size=256M, upload_max_filesize=256M, date.timezone=UTC
         coverage: xdebug
         tools: composer
 
-    - name: Cache Composer dependencies
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-composer-
-
     - name: Clear Composer cache
       run: composer clear-cache
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
-
-    - name: Update Composer dependencies
-      run: composer update --prefer-dist --no-progress --no-suggest --no-interaction
+      run: composer install --prefer-dist --no-progress --no-interaction
 
     - name: List vendor directory
       run: ls -la vendor
@@ -48,5 +37,17 @@ jobs:
 
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests/PerguntaTest.php
+
+    - name: Commit updated composer.lock
+      if: success() && github.ref == 'refs/heads/main'
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add composer.lock
+        git commit -m "Update composer.lock"
+        git push origin main
+
+
+
 
      
