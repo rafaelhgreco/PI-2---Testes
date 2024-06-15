@@ -17,7 +17,7 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '11.0'
+        php-version: '8.3.8'
         extensions: mbstring, xml, pdo_mysql
         ini-values: post_max_size=256M, upload_max_filesize=256M, date.timezone=UTC
         coverage: xdebug
