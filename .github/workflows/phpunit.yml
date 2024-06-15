@@ -17,17 +17,33 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.3.8'
+        php-version: '8.0'  # Use a versão 8.0
         extensions: mbstring, xml, pdo_mysql
         ini-values: post_max_size=256M, upload_max_filesize=256M, date.timezone=UTC
         coverage: xdebug
         tools: composer
 
-    - name: Validate PHP syntax
-      run: php -l class/
+    - name: Cache Composer dependencies
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+
+    - name: Clear Composer cache
+      run: composer clear-cache
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
+    - name: List vendor directory
+      run: ls -la vendor
+
+    - name: Validate PHP syntax
+      run: find . -name "*.php" -exec php -l {} \;
+
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests/PerguntaTest.php
+
+     
