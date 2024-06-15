@@ -23,6 +23,9 @@ jobs:
         coverage: xdebug
         tools: composer
 
+    - name: Set execute permissions for PHPUnit
+      run: chmod +x vendor/bin/phpunit
+      
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests/PerguntaTest.php
 
